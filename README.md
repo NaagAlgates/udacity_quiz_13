@@ -33,14 +33,21 @@ Specs
     The InkWell will not animate if the onTap function is null. Use a print statement for now, as a placeholder. i.e. onTap: () { print('I was tapped!'); }.
     The InkWell's splash and highlight colors should be the color we pass in.
 
-##Initial Code
+## Initial Code
 
     https://github.com/flutter/udacity-course/tree/master/course/02_category_widget/task_02_category_widget
     
-##Flutter Widgets
+## Flutter Widgets
     
     https://flutter.io/widgets/
     
-##Reference 
+## Reference 
 
     https://github.com/flutter/udacity-course/tree/master/
+
+## Screenshots
+
+![Samples](https://github.com/NaagAlgates/udacity_quiz_13/blob/master/screenshots/1.png)
+![Samples](https://github.com/NaagAlgates/udacity_quiz_13/blob/master/screenshots/2.png)
+![Samples](https://github.com/NaagAlgates/udacity_quiz_13/blob/master/screenshots/3.png)
+![Samples](https://github.com/NaagAlgates/udacity_quiz_13/blob/master/screenshots/4.gif)
