@@ -13,9 +13,9 @@ import 'package:flutter/material.dart';
 ///
 
 class Category extends StatelessWidget {
-  final String name;
-  final ColorSwatch color;
-  final IconData iconLocation;
+  final String categoryName;
+  final ColorSwatch categoryColor;
+  final IconData categoryIcon;
 
   /// Creates a [Category].
   ///
@@ -26,12 +26,12 @@ class Category extends StatelessWidget {
   // in the assert statement.
   const Category({
     Key key,
-    @required this.name,
-    @required this.color,
-    @required this.iconLocation,
-  })  : assert(name != null),
-        assert(color != null),
-        assert(iconLocation != null),
+    @required this.categoryName,
+    @required this.categoryColor,
+    @required this.categoryIcon,
+  })  : assert(categoryName != null),
+        assert(categoryColor != null),
+        assert(categoryIcon != null),
         super(key: key);
 
   Widget build(BuildContext context) {
@@ -39,22 +39,36 @@ class Category extends StatelessWidget {
     assert(debugCheckHasMaterial(context));
 
     return Material(
-      color: Colors.transparent,
-      child: new Row(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: <Widget>[
-          new Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Icon(iconLocation),
-          ),
-          new Center(
-              child: Text(
-            name,
-            style: Theme.of(context).textTheme.headline,
-            textAlign: TextAlign.center,
-          ))
-        ],
-      ),
-    );
+        color: Colors.transparent,
+        child: new Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: new Container(
+              height: 100.0,
+              child: new InkWell(
+                borderRadius: BorderRadius.circular(50.0),
+                highlightColor: categoryColor,
+                onTap: () {
+                  print('I was tapped!');
+                },
+                child: new Row(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: <Widget>[
+                    new Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Icon(
+                        categoryIcon,
+                        size: 60.0,
+                      ),
+                    ),
+                    new Center(
+                        child: Text(
+                      categoryName,
+                      style: new TextStyle(fontSize: 24.0),
+                      textAlign: TextAlign.center,
+                    ))
+                  ],
+                ),
+              )),
+        ));
   }
 }
